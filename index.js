@@ -3,11 +3,10 @@ const server = express();
 const port = 3000;
 
 
-// MIDDLEWARE how requests are handled when I want to deal with them
-// 200: Good to go
-// How to register routes in between
+// Next() - Continue through server request to see if anything else matches
 server.get('/test', (req, res, next) => {
-    res.status(200).send('Success!')
+    console.log('Test Success')
+    next();
 });
 
 
