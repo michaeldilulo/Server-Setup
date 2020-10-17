@@ -1,9 +1,13 @@
 import express from 'express';
 import bp from "body-parser";
+import DbContext from "./database/dbconfig";
 import FirstController from "./controllers/FirstController.js";
 
 let server = express();
 let port = 3000;
+
+//* This will fail if you do not have a connection string
+DbContext.connect();
 
 server.use(bp.json());
 
